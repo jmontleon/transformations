@@ -218,8 +218,7 @@ func openshiftWhiteOuts(file TransformFile, u unstructured.Unstructured) bool {
 		return true
 	}
 	// Assume if from/to openshift that the admin rolebinding is already created for the user.
-	if u.GetName() == "admin" ||
-		u.GetName() == "system:image-builders" ||
+	if u.GetName() == "system:image-builders" ||
 		u.GetName() == "system:image-pullers" ||
 		u.GetName() == "system:deployers" {
 		if u.GetObjectKind().GroupVersionKind().GroupKind() == AOS3RoleBindingGK ||
